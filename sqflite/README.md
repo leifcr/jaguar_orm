@@ -46,9 +46,7 @@ class PostBean {
   String get tableName => 'posts';
 
   Future<Null> createTable() async {
-    final st = new Create()
-        .named(tableName)
-        .ifNotExists()
+    final st = new Create(tableName)
         .addNullInt('_id', primary: true)
         .addNullStr('msg')
         .addNullStr('author');
